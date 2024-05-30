@@ -174,7 +174,6 @@ section {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 20px;
     gap: 15px;
     flex-wrap: wrap;
 }
@@ -209,32 +208,38 @@ section {
 }
 
 /* Packages */
+
 .container {
-    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .row {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    min-width: 400px;
+    max-width: 500px;
 }
 
 .card {
-    width: 460px;
+    background-color: white;
     border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .card-header {
     text-align: center;
-    padding: 15px;
+    padding: 25px;
     font-size: 1.5rem;
-    font-weight: bold;
     color: #fff;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 .card-basic .card-header {
@@ -245,65 +250,110 @@ section {
     background-color: #FE6347;
 }
 
+.list-group {
+    list-style: none;
+    padding: 0;
+}
+
 .list-group-item {
-    text-align: center;
-    padding: 10px 20px;
-    border: none;
+    margin: 10px 0;
+    font-size: 18px;
+    padding: 10px 0;
     border-bottom: 1px solid #ddd;
-    list-style-type: none;
 }
 
 .list-group-item:last-child {
     border-bottom: none;
-    padding-top: 30px;
-    padding-bottom: 30px;
 }
 
-.list-group-item p {
-    margin: 0;
+.room-count {
+    font-weight: bold;
+    margin: 0 10px;
 }
 
-.btn-primary {
-    background-color: #fff;
-    color: #fff;
-    border: 1px solid #555;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
+.room-price {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
-.btn-danger {
-    background-color: #FE6347;
-    color: #fff;
+.btn-signup {
+    background-color: #ff6f61;
+    color: white;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
+    border-radius: 4px;
+    padding: 15px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-.column ul {
-    margin: 0;
-    padding: 0;
+.btn-signup:hover {
+    background-color: #ff5a4c;
+}
+
+.minus-btn, .plus-btn {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.minus-btn:hover, .plus-btn:hover {
+    background-color: #ccc;
+}
+
+.card-basic {
+    background-color: #F1F1F1;
+}
+
+.card-pro {
+    background-color: #F1F1F1;
 }
 
 /* Contact */
-.form {
-    width: 100%;
-    height: 30px;
-    margin-bottom: 12px;
-    opacity: 0.3;
+
+.form-container {
+    background-color: white;
 }
 
-.btn {
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     width: 100%;
-    background-color: #FE6347;
-    padding-top: 13px;
-    padding-bottom: 13px;
+}
+
+.send-button {
+    background-color: #ff5a4c;
+    color: white;
     border: none;
-    color: #fff;
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.send-button:hover {
+    background-color: #ff6f61;
 }
 
 /* Media Queries */
+
 @media (max-width: 1199px) {
     #header {
         left: -300px;
@@ -359,5 +409,48 @@ section {
 
     #main {
         margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .card-header {
+        font-size: 22px;
+    }
+
+    .list-group-item {
+        font-size: 16px;
+    }
+
+    .room-price {
+        font-size: 24px;
+    }
+
+    .btn-signup {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .card-header {
+        font-size: 20px;
+    }
+
+    .list-group-item {
+        font-size: 14px;
+    }
+
+    .room-price {
+        font-size: 22px;
+    }
+
+    .btn-signup {
+        padding: 10px 15px;
+        font-size: 14px;
     }
 }
